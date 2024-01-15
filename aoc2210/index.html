@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script src="script.js" defer></script>
+		<title>Cathode-Ray Tube</title>
+		<style>
+			body {
+				font-family: monospace;
+				font-size: 1.95vw;
+				color: #00ff00;
+				background-color: black;
+			}
+			div {
+				margin-top: 2em;
+				margin-left: auto;
+				margin-right: auto;
+				text-align: center;
+			}
+			#stats {
+				padding-left: 1em;
+				padding-right: 1em;
+				text-align: right;
+			}
+			#controls {
+				font-size: 1.5rem;
+			}
+			#plus, #minus {
+				color: black;
+				background-color: #00ff00;
+				font-family: inherit;
+				font-size: inherit;
+				border: none;
+				padding-top: 0.1rem;
+				padding-bottom: 0.1rem;
+				padding-left: 1rem;
+				padding-right: 1rem;
+			}
+		  </style>
+	</head>
+	<body>
+		<div id="stats">
+			<span id="instruction"> </span>
+			 | x: <span id="x"> </span>
+			 | cycle: <span id="cycle"> </span>
+			 | speed: <span id="speed"> </span> ms
+		</div>
+		<div id="crt">
+
+		</div>
+		<div id="controls">
+			<button id="minus">speed&nbsp-</button>
+			<button id="plus">speed&nbsp+</button>
+		</div>
+	</body>
+</html>

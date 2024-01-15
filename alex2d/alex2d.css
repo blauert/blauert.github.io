@@ -1,0 +1,85 @@
+body {
+    background-color: #121212;
+    color: whitesmoke;
+}
+.page {
+    display: flex;
+    flex-wrap: wrap;
+}
+h2 {
+    margin-top: 5vh;
+    color: green;
+}
+div {
+    text-align: center;
+    margin: auto;
+}
+b {
+    color: lightgreen;
+    margin-right: 5px;
+    flex-shrink: 0;
+}
+button {
+    font-size: 2.5vh;
+    background-color: #444;
+    border: none;
+}
+p {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.controls {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+.controls button {
+    display: inline-block;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+/* Media query for larger screens */
+@media only screen and (min-width: 1201px) {
+    .page {
+        justify-content: center; /* Center the content horizontally on larger screens */
+    }
+
+    .controls-left,
+    .canvas,
+    .controls-right {
+        flex: 1; /* Equal width for the three divs */
+        order: 1; /* Default order for larger screens */
+    }
+
+    .canvas {
+        flex: 0 0 600px; /* Fixed width of 600px for the canvas */
+        margin: 0 20px; /* Add some margin for spacing */
+    }
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 1200px) {
+    .page {
+        flex-direction: column; /* Stack divs vertically on smaller screens */
+    }
+
+    .controls-left {
+        order: 2;
+        flex: 1;
+    }
+
+    .canvas {
+        order: 1;
+        flex: 2;
+        width: 100%; /* Make the canvas take full width on smaller screens */
+        height: auto;
+    }
+
+    .controls-right {
+        order: 3;
+        flex: 1;
+    }
+}

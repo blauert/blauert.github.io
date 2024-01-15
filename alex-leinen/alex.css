@@ -1,0 +1,62 @@
+body {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 200px;
+    text-align: center;
+}
+
+a {
+    color: #d0adf0;
+}
+
+a:active {
+    color: #ff9e9e;
+}
+
+.greentext {
+    color: green;
+}
+
+.leine {
+    color: yellow;
+    font-size: 24px;
+}
+
+div {
+    text-align: center;
+}
+
+button {
+    background-color: darkslateblue;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+.img-container {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.image1 {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.image2 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    visibility: hidden;
+}

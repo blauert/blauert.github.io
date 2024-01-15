@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fockmast</title>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+    <link rel="stylesheet" href="../alex.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⛵</text></svg>">
+</head>
+
+<body>
+
+    <script>
+        function toggleImageVisibility() {
+            var image2 = document.querySelector('.image2');
+            var currentVisibility = image2.style.visibility;
+            image2.style.visibility = (currentVisibility === 'visible') ? 'hidden' : 'visible';
+        }
+    </script>
+
+    <p>
+        <a href="../"><img src="../back_arrow_white.svg" height="40"></a>
+    </p>
+
+    <div class="img-container">
+        <img class="image1" src="backdeck_fockmast1.webp" onclick="toggleImageVisibility()">
+        <img class="image2" src="backdeck_fockmast2.webp" onclick="toggleImageVisibility()">
+    </div>
+
+    <p>
+        <a href="../"><img src="../back_arrow_green.svg" height="450"></a>
+    </p>
+
+</body>
+
+</html>

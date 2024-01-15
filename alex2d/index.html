@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <title>Alex2D</title>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+    <link rel="stylesheet" href="alex2d.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⛵</text></svg>">
+    <!-- https://github.com/liabru/matter-js/tree/master/build -->
+    <script src="matter.js"></script>
+    <script src="Render.js"></script>
+    <script src="ship.js"></script>
+    <script src="alex2d.js" defer></script>
+    <script src="buttons.js" defer></script>
+</head>
+
+<body>
+    <div class="page">
+
+        <div class="controls-left">
+
+            <h2>Geitaue & Gordinge</h2>
+            <p>
+                <b>Royal</b>
+                <span class="controls">
+                    Geitaue:
+                    <button id="royalgeitaue_holen">💪</button>
+                    <button id="royalgeitaue_fieren">🙌</button>
+                    Gordinge:
+                    <button id="royalgordinge_holen">💪</button>
+                    <button id="royalgordinge_fieren">🙌</button>
+                </span>
+            </p>
+            <p>
+                <b>Bram</b>
+                <span class="controls">
+                    Geitaue:
+                    <button id="bramgeitaue_holen">💪</button>
+                    <button id="bramgeitaue_fieren">🙌</button>
+                    Gordinge:
+                    <button id="bramgordinge_holen">💪</button>
+                    <button id="bramgordinge_fieren">🙌</button>
+                </span>
+            </p>
+            <p>
+                <b>Obermars</b>
+                <span class="controls">
+                    Geitaue:
+                    <button id="obermarsgeitaue_holen">💪</button>
+                    <button id="obermarsgeitaue_fieren">🙌</button>
+                    Gordinge:
+                    <button id="obermarsgordinge_holen">💪</button>
+                    <button id="obermarsgordinge_fieren">🙌</button>
+                </span>
+            </p>
+            <p>
+                <b>Untermars</b>
+                <span class="controls">
+                    Geitaue:
+                    <button id="untermarsgeitaue_holen">💪</button>
+                    <button id="untermarsgeitaue_fieren">🙌</button>
+                    Gordinge:
+                    <button id="untermarsgordinge_holen">💪</button>
+                    <button id="untermarsgordinge_fieren">🙌</button>
+                </span>
+            </p>
+            <p>
+                <b>Fock</b>
+                <span class="controls">
+                    Geitaue:
+                    <button id="untersegelgeitaue_holen">💪</button>
+                    <button id="untersegelgeitaue_fieren">🙌</button>
+                    Gordinge:
+                    <button id="untersegelgordinge_holen">💪</button>
+                    <button id="untersegelgordinge_fieren">🙌</button>
+                </span>
+            </p>
+
+            <h2>Schoten</h2>
+            <p>
+                <b>Royal</b>
+                <span class="controls">
+                    Bb:
+                    <button id="royalschotBb_holen">💪</button>
+                    <button id="royalschotBb_fieren">🙌</button>
+                    Stb:
+                    <button id="royalschotStb_holen">💪</button>
+                    <button id="royalschotStb_fieren">🙌</button>
+                </span>
+            </p>
+            <p>
+                <b>Bram</b>
+                <span class="controls">
+                    Bb:
+                    <button id="bramschotBb_holen">💪</button>
+                    <button id="bramschotBb_fieren">🙌</button>
+                    Stb:
+                    <button id="bramschotStb_holen">💪</button>
+                    <button id="bramschotStb_fieren">🙌</button>
+                </span>
+            </p>
+            <p>
+                <b>Obermars</b>
+                <span class="controls">
+                    Bb:
+                    <button id="obermarsschotBb_holen">💪</button>
+                    <button id="obermarsschotBb_fieren">🙌</button>
+                    Stb:
+                    <button id="obermarsschotStb_holen">💪</button>
+                    <button id="obermarsschotStb_fieren">🙌</button>
+                </span>
+            </p>
+            <p>
+                <b>Untermars</b>
+                <span class="controls">
+                    Bb:
+                    <button id="untermarsschotBb_holen">💪</button>
+                    <button id="untermarsschotBb_fieren">🙌</button>
+                    Stb:
+                    <button id="untermarsschotStb_holen">💪</button>
+                    <button id="untermarsschotStb_fieren">🙌</button>
+                </span>
+            </p>
+            <p>
+                <b>Fock-Schot</b>
+                <span class="controls">
+                    Bb:
+                    <button id="untersegelschotBb_holen">💪</button>
+                    <button id="untersegelschotBb_fieren">🙌</button>
+                    Stb:
+                    <button id="untersegelschotStb_holen">💪</button>
+                    <button id="untersegelschotStb_fieren">🙌</button>
+                </span>
+            </p>
+            <p>
+                <b>Fock-Hals</b>
+                <span class="controls">
+                    Bb:
+                    <button id="untersegelhalsBb_holen">💪</button>
+                    <button id="untersegelhalsBb_fieren">🙌</button>
+                    Stb:
+                    <button id="untersegelhalsStb_holen">💪</button>
+                    <button id="untersegelhalsStb_fieren">🙌</button>
+                </span>
+            </p>
+
+        </div>
+
+        <div class="canvas">
+            <canvas id="matterJS" style="width: 600px; height: 800px;"></canvas>
+            <h3>Schiff</h3>
+            <button id="ship_left">↖️</button>
+            <button id="ship_right">↗️</button>
+        </div>
+
+        <div class="controls-right">
+
+            <h2>Rahfallen</h2>
+            <p>
+                <b>Royal</b>
+                <span class="controls">
+                    <button id="royalrah_up">💪</button>
+                    <button id="royalrah_down">🙌</button>
+                </span>
+            </p>
+            <p>
+                <b>Bram</b>
+                <span class="controls">
+                    <button id="bramrah_up">💪</button>
+                    <button id="bramrah_down">🙌</button>
+    	        </span>
+            </p>
+            <p>
+                <b>Obermars</b>
+                <span class="controls">
+                    <button id="obermarsrah_up">💪</button>
+                    <button id="obermarsrah_down">🙌</button>
+                </span>
+            </p>
+            
+            <h2>Toppnanten</h2>
+            <p>
+                <b>Obermarsniederholer</b>
+                <span class="controls">
+                    Bb:
+                    <button id="obermarsniederholerBb_holen">💪</button>
+                    <button id="obermarsniederholerBb_fieren">🙌</button>
+                    Stb:
+                    <button id="obermarsniederholerStb_holen">💪</button>
+                    <button id="obermarsniederholerStb_fieren">🙌</button>
+                </span>
+            </p>
+            <p>
+                <b>Fockrah-Toppnanten</b>
+                <span class="controls">
+                    Bb:
+                    <button id="toppnantBb_holen">💪</button>
+                    <button id="toppnantBb_fieren">🙌</button>
+                    Stb:
+                    <button id="toppnantStb_holen">💪</button>
+                    <button id="toppnantStb_fieren">🙌</button>
+                </span>
+            </p>
+
+            <h2>Brassen</h2>
+            <p>
+                <b>Obermars</b>
+                <span class="controls">
+                    Bb:
+                    <button id="obermarsbrasseBb_holen">💪</button>
+                    <button id="obermarsbrasseBb_fieren">🙌</button>
+                    Stb:
+                    <button id="obermarsbrasseStb_holen">💪</button>
+                    <button id="obermarsbrasseStb_fieren">🙌</button>
+                </span>
+            </p>
+            <p>
+                <b>Untermars</b>
+                <span class="controls">
+                    Bb:
+                    <button id="untermarsbrasseBb_holen">💪</button>
+                    <button id="untermarsbrasseBb_fieren">🙌</button>
+                    Stb:
+                    <button id="untermarsbrasseStb_holen">💪</button>
+                    <button id="untermarsbrasseStb_fieren">🙌</button>
+                </span>
+            </p>
+            <p>
+                <b>Fock</b>
+                <span class="controls">
+                    Bb:
+                    <button id="unterbrasseBb_holen">💪</button>
+                    <button id="unterbrasseBb_fieren">🙌</button>
+                    Stb:
+                    <button id="unterbrasseStb_holen">💪</button>
+                    <button id="unterbrasseStb_fieren">🙌</button>
+                </span>
+            </p>
+
+        </div>
+
+    </div>
+</body>
+
+</html>
