@@ -67,12 +67,12 @@ p {
     }
 
     .controls-left {
-        order: 2;
+        order: 1;
         flex: 1;
     }
 
     .canvas {
-        order: 1;
+        order: 2;
         flex: 2;
         width: 100%; /* Make the canvas take full width on smaller screens */
         height: auto;
