@@ -388,3 +388,67 @@ document.querySelector("#ship_left").addEventListener("mousedown", shipControls.
 document.querySelector("#ship_left").addEventListener("touchstart", shipControls.startLoopLeft);
 document.querySelector("#ship_right").addEventListener("mousedown", shipControls.startLoopRight);
 document.querySelector("#ship_right").addEventListener("touchstart", shipControls.startLoopRight);
+
+
+// ALLE SETZEN
+
+function setRope(ropes, length) {
+    for (let rope of ropes) {
+        for (let c of rope.constraints) {
+            c.length = length;
+        }
+    }
+}
+
+function setRah(rah) {
+    let curr_straight = Vector.rotate(rah.rack.pointB,rah.rack.angleB);
+    let direction = Vector.sub(rah.oben, curr_straight);
+    let new_straight = Vector.add(curr_straight, direction);
+    rah.rack.pointB = Vector.rotate(new_straight, rah.rack.angleB);
+}
+
+function alleSetzen() {
+    // geitaue und gordinge
+    setRope([untersegelgordingBb, untersegelgordingStb], 17)
+    setRope([untersegelgeitauBb, untersegelgeitauStb], 30)
+    setRope([untermarsgordingBb, untermarsgordingStb], 10)
+    setRope([untermarsgeitauBb, untermarsgeitauStb], 20)
+    setRope([obermarsgordingBb, obermarsgordingStb], 10)
+    setRope([obermarsgeitauBb, obermarsgeitauStb], 20)
+    setRope([bramgordingBb, bramgordingStb], 15)
+    setRope([bramgeitauBb, bramgeitauStb], 25)
+    setRope([royalgordingBb, royalgordingStb], 12)
+    setRope([royalgeitauBb, royalgeitauStb], 20)
+    // schoten
+    setRope([untersegelhalsBb, untersegelhalsStb], 20)
+    setRope([untersegelschotBb, untersegelschotStb], 20)
+    setRope([untermarsschotBb, untermarsschotStb], 0)
+    setRope([obermarsschotBb, obermarsschotStb], 0)
+    setRope([bramschotBb, bramschotStb], 0)
+    setRope([royalschotBb, royalschotStb], 0)
+    // obermarsniederholer
+    setRope([obermarsniederholerBb, obermarsniederholerStb], 23)
+    // brassen
+    setRope([unterbrasseBb, unterbrasseStb], 60)
+    setRope([untermarsbrasseBb, untermarsbrasseStb], 70)
+    setRope([obermarsbrasseBb, obermarsbrasseStb], 80)
+    // rahen
+    setRah({
+        rack: obermarsrahRack,
+        oben: obermarsrahOben,
+        unten: obermarsrahUnten
+    })
+    setRah({
+        rack: bramrahRack,
+        oben: bramrahOben,
+        unten: bramrahUnten
+    })
+    setRah({
+        rack: royalrahRack,
+        oben: royalrahOben,
+        unten: royalrahUnten
+    })
+}
+
+document.querySelector("#alle_setzen").addEventListener("click", alleSetzen);
+document.querySelector("#alle_setzen").addEventListener("touchstart", alleSetzen);
